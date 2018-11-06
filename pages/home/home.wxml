@@ -1,0 +1,56 @@
+<scroll-view 
+  scroll-y
+  class='home-container'
+  lower-threshold="100"
+  bindscrolltolower="loadMore"
+>
+  <view class="page">
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+    </view>
+  </view>
+  <swiper autoplay>
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item class="img-content">
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="hot">
+    <text>热</text>
+    <text>点</text>
+  </view>
+  <view class="home-main">
+    <view class="main-nav-container">
+      <image style='width:100%;height:180px' src="http://img.ugoshop.com/201811/6e5c664447b341d1aaf9beca4b4b4570.gif"></image>
+    </view>
+    <view class="main-content">
+      <view class="main-content-goods" wx:for="{{listData}}" wx:key="{{item.id}}">
+        <image class="goods-img" src='{{item.img}}'></image>
+        <view class="goods-title">{{item.title}}</view>
+        <view class="goods-price">￥{{item.price}}</view>
+        <view class="goods-dec">详情</view>
+      </view>
+    </view>
+  </view>
+  <view 
+    class="noMore"
+    wx:if="{{page === total}}">
+      没有更多了……
+  </view>
+</scroll-view>

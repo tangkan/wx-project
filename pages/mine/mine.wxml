@@ -1,0 +1,93 @@
+<view class="mine-header">
+  <view class="balance">
+    <text>余额</text>
+    <text>0.00</text>
+    <text>充值</text>
+  </view>
+  <view class="head-img">
+    <view>
+      <image src=''></image>
+    </view>
+    <text>倘若那天</text>
+    <text>普通会员</text>
+  </view>
+  <view class="integral">
+    <text>积分</text>
+    <text>0.00</text>
+  </view>
+</view>
+
+<view class="mine-mian">
+  <view class="phone">
+    <view class="phone-content">  
+      <view>
+        <icon class="iconfont icon-shouji"></icon>
+        绑定手机号
+        <icon class="iconfont icon-xiangyou"></icon>
+      </view>
+      <text>绑定手机号可以合并或同步您其他账号数据</text>
+    </view>
+  </view>
+
+  <view class="my-order">
+    <icon class="iconfont icon-my-dingdan"></icon>
+    <text>我的订单</text>
+    <icon class="iconfont icon-xiangyou"></icon>
+    <text>查看全部订单</text>
+  </view>
+
+  <view class="nav">
+    <view>
+      <image src=''></image>
+      <text>待付款</text>
+    </view>
+    <view>
+      <image src=''></image>
+      <text>待付款</text>
+    </view>
+    <view>
+      <image src=''></image>
+      <text>待付款</text>
+    </view>
+    <view>
+      <image src=''></image>
+      <text>待付款</text>
+    </view>
+    <view>
+      <image src=''></image>
+      <text>待付款</text>
+    </view>
+  </view>
+
+  <view class="my-order">
+    <icon class="iconfont icon-kanjia"></icon>
+    <text>砍价首页</text>
+    <icon class="iconfont icon-xiangyou"></icon>
+  </view>
+  <view class="my-order">
+    <icon class="iconfont icon-fenxiao"></icon>
+    <text>成为分销商</text>
+    <icon class="iconfont icon-xiangyou"></icon>
+  </view>
+  <view class="my-order">
+    <icon class="iconfont icon-youhuiquan"></icon>
+    <text>领取优惠券</text>
+    <icon class="iconfont icon-xiangyou"></icon>
+  </view>
+  <view class="my-order">
+    <icon class="iconfont icon-youhuiquan"></icon>
+    <text>我的优惠券</text>
+    <icon class="iconfont icon-xiangyou"></icon>
+  </view>
+  <view class="my-order">
+    <icon class="iconfont icon-gouwuche"></icon>
+    <text>我的购物车</text>
+    <icon class="iconfont icon-xiangyou"></icon>
+  </view>
+  <view class="my-order">
+    <icon class="iconfont icon-follow"></icon>
+    <text>我的关注</text>
+    <icon class="iconfont icon-xiangyou"></icon>
+  </view>
+  
+</view>

@@ -1,0 +1,167 @@
+/* pages/mine/mine.wxss */
+@import './icon.wxss'
+
+.mine-header {
+  height: 130px;
+  background-color: #f16464;
+  display: flex;
+  justify-content: space-around;
+}
+
+.balance {
+  width: 100px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.balance text {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.balance text:nth-child(2) {
+  color: #ddf313;
+}
+
+.balance text:nth-child(3) {
+  margin-top: 3px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border:1px solid #ffffff;
+}
+
+.head-img {
+  width: 140px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.head-img > view {
+  width: 60px;
+  height: 60px;
+  background-color: #dedede;
+  border-radius: 50%;
+}
+
+.head-img > view image{
+  width: 100%;
+  height: 100%;
+}
+
+.head-img > text{
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.integral {
+  width: 100px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.integral > text {
+  font-size: 12px;
+  color: #ffffff;
+}
+.integral text:nth-child(2) {
+  height: 20px;
+  color: #ddf313;
+  float: left;
+}
+
+.mine-mian {
+  background-color: #fdf6f6;
+}
+
+.mine-mian icon{
+  font-size: 20px;
+}
+
+.mine-mian .phone {
+  font-size: 20px;
+  background-color: #ffffff;
+}
+
+.mine-mian .phone .phone-content {
+  color: #f16464;
+}
+
+.mine-mian .phone .phone-content view {
+  font-size: 16px;
+  color:#f16464;
+  padding: 0 10px;
+}
+
+.mine-mian .phone .phone-content > text {
+  padding-top: 5px;
+  font-size: 13px;
+  color: #beb9b9;
+  margin-left: 20px;
+}
+
+.mine-mian .phone .phone-content .icon-xiangyou {
+  float: right;
+}
+
+
+.my-order {
+  margin-top: 5px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-bottom: 1px solid #dedede;
+}
+
+.my-order > text {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.my-order > text:nth-child(4) {
+  margin-top: 6px;
+  font-size:13px;
+  float: right;
+  color: #a09999;
+}
+
+.my-order .icon-xiangyou {
+  float: right;
+  color: #a09999;
+}
+
+.nav {
+  height: 80px;
+  background-color: #dedede;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav >view {
+  width: 25%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav >view image{
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #dedede;
+}
+
+.nav >view text {
+  font-size: 12px;
+  margin-top: 3px;
+}

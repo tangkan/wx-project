@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/mall/mall",
+    "pages/cart/cart",
+    "pages/mine/mine",
+    "pages/detail/detail",
+    "pages/list/list"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "extra/img/home.png",
+        "selectedIconPath": "extra/img/selectedHome.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "全部分类",
+        "iconPath": "extra/img/mall.png",
+        "selectedIconPath": "extra/img/selectedMall.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "extra/img/cart.png",
+        "selectedIconPath": "extra/img/selectedCart.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "extra/img/mine.png",
+        "selectedIconPath": "extra/img/selectedMine.png"
+      }
+    ],
+    "selectedColor":"#d81e06"
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "嗨团商城",
+    "navigationBarTextStyle":"black"
+  }
+}
