@@ -9,24 +9,12 @@
 
 .iconfont {
   font-family:"iconfont" !important;
-  font-size:16px;
+  font-size:32px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-youhuiquan:before { content: "\e669"; }
-
-.icon-xiangyou:before { content: "\e666"; }
-
-.icon-fenxiao:before { content: "\e60b"; }
-
-.icon-shouji:before { content: "\e65d"; }
-
-.icon-kanjia:before { content: "\e60f"; }
-
 .icon-follow:before { content: "\e703"; }
-
-.icon-my-dingdan:before { content: "\e667"; }
 
 .icon-gouwuche:before { content: "\e610"; }

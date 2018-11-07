@@ -1,0 +1,62 @@
+page {
+  height: 100%;
+}
+
+.page {
+  height: 100%;
+}
+
+.goods-list-content {
+  /* padding: 10px; */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #f3f7f7
+}
+
+.good-info {
+  width: 170px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.good-img {
+  width: 170px;
+  height: 170px;
+}
+
+.img{
+  width: 170px;
+  height: 170px;
+}
+
+.goods-title {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.goods-price {
+  font-size: 16px;
+  margin-left: 10px;
+  color: #ff0000;
+}
+.goods-dec {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 2px 4px;
+  border: 1px solid #ff0000;
+  font-size: 12px;
+  border-radius: 7px;
+  color: #ff0000;
+}
+
+.weui-loadmore_line {
+  margin: 0;
+  margin-top: 20px;
+  margin-left: 70px;
+}

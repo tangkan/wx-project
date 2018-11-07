@@ -1,5 +1,5 @@
 /* pages/mine/mine.wxss */
-@import './icon.wxss'
+@import './icon.wxss';
 
 .mine-header {
   height: 130px;

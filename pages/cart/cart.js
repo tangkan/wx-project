@@ -1,3 +1,9 @@
+import store from "../../store/store.js"
+import {
+  addCount,
+  reduceCount
+} from "../../store/actions/cart.js"
+
 // pages/cart/cart.js
 Page({
 
@@ -5,14 +11,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    listData: [],
+    allCount: 0
   },
-
+  //添加数量
+  addCartCount(e) {
+    store.dispatch(addCount(e.currentTarget.dataset.id))
+  },
+  //减少数量
+  reduceCartCount(e) {
+    store.dispatch(reduceCount(e.currentTarget.dataset.id))
+  },
+  //获取store中的数据
+  getDataFromStore() {
+    //计算总数
+    const allCount = store.getState().cart.data.reduce((result, item) => {
+      result += item.count;
+      return result;
+    }, 0)
+    this.setData({
+      listData: store.getState().cart.data,
+      allCount
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getDataFromStore();
+    //去监听store中数据的变化
+    store.subscribe(this.getDataFromStore)
   },
 
   /**

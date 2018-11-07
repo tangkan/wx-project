@@ -1,2 +1,47 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<view>
+  <view class="header">
+    嗨团购物:
+  </view>
+    
+  <view 
+    class="goods-cart"
+    wx:for="{{listData}}"
+    wx:key="{{item.id}}"
+  >
+    <checkbox value="" checked />
+    <view class="goods">
+      <image src='{{item.img}}'></image>
+      <view class="goods-title">{{item.title}}</view>
+      <view class="goods-price">￥{{item.price}}</view>
+      <view class="count">
+        <text
+          catchtap='reduceCartCount'
+          data-id="{{item.id}}"
+        >-</text>
+        <text class="count-content">{{item.count}}</text>
+        <text
+          catchtap='addCartCount'
+          data-id="{{item.id}}"
+        >+</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <view class="checkAll">
+      <checkbox value="" checked />全选
+    </view>
+    <view class="allPrice">
+      <view>
+        <text>总金额：</text>
+        <text>123</text>
+      </view>
+      <view>
+        <text>优惠金额：</text>
+        <text>123</text>
+      </view>
+    </view>
+    <view class="cart-order">结算</view>
+  </view>
+</view>

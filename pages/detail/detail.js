@@ -1,66 +1,40 @@
-// pages/cart/cart.js
+import ajax from "../../utils/request.js";
+import store from "../../store/store.js";
+import { addToCart } from "../../store/actions/cart.js";
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    listData:{},
+    count:0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad(opations) {
+    //从store中获取数量
+    this.getDataFromStore();
+    store.subscribe(this.getDataFromStore);
+    //加载轮播图数据
+    ajax.get(`/api/v1/ht_detail?id=${opations.id}`)
+      .then(res => {
+        this.setData({
+          listData: res.data.data
+        });
+      })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  addToCart(e) {
+    store.dispatch(addToCart(e.currentTarget.dataset.cart));
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  getDataFromStore() {
+    const allCount = store.getState().cart.data.reduce((result,item) => {
+      result += item.count;
+      return result;
+    },0)
+    this.setData({
+      count: allCount
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //跳转到购物车
+  goToCart() {
+    wx.navigateTo({
+      url: "/pages/cart/cart"
+    })
   }
 })

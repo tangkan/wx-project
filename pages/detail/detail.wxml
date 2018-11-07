@@ -1,2 +1,32 @@
 <!--pages/cart/cart.wxml-->
-<text>123</text>
+<view>
+  <swiper indicator-dots autoplay>
+    <block wx:for="{{listData.img}}" wx:key="{{index}}">
+      <swiper-item class="img-content">
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="goods-info">
+    <view class="goods-price">￥{{listData.price}}</view>
+    <view class="goods-title">{{listData.title}}</view>
+    <view class="goods-dec">{{listData.dec}}</view>
+  </view>
+
+  <view class="footer">
+    <view class="shouchang">
+      <icon class="iconfont icon-follow"></icon>
+    </view>
+    <view class="cart" catchtap="goToCart">
+      <icon class="iconfont icon-gouwuche"></icon>
+      <view class="weui-badge" style="position: absolute;top:5px;right:6px;">{{count}}</view>
+    </view>
+    <view 
+      class="addToCart"
+      catchtap="addToCart"
+      data-cart="{{listData}}"
+    >加入购物车</view>
+    <view class="goumai">立即购买</view>
+  </view>
+</view>
