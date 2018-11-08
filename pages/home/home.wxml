@@ -44,7 +44,7 @@
         <image class="goods-img" src='{{item.img}}'></image>
         <view class="goods-title">{{item.title}}</view>
         <view class="goods-price">￥{{item.price}}</view>
-        <view class="goods-dec">加入购物车</view>
+        <view class="goods-dec" catchtap='addCart' data-cart="{{item}}">加入购物车</view>
       </view>
     </view>
   </view>

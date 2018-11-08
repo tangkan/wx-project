@@ -1,10 +1,16 @@
 //app.js
+import store from "./store/store.js"
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
+    //添加badge
+    this.setBadge();
+    store.subscribe(this.setBadge)
 
     // 登录
     wx.login({
@@ -33,6 +39,18 @@ App({
       }
     })
   },
+  setBadge() {
+    this.cart = store.getState().cart.data || [];
+    const total = this.cart.reduce((result, item) => {
+      result += item.count;
+      return result;
+    }, 0)
+    wx.setTabBarBadge({
+      index: 2,
+      text:`${total}`
+    })
+  },
+
   globalData: {
     userInfo: null
   }

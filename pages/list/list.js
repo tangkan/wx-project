@@ -1,4 +1,6 @@
-import ajax from "../../utils/request.js"
+import ajax from "../../utils/request.js";
+import store from "../../store/store.js";
+import { addToCart } from "../../store/actions/cart.js";
 
 Page({
 
@@ -71,6 +73,15 @@ Page({
     wx.navigateTo({
       url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}`,
     })
+  },
+  //加入购物车
+  addCart(e) {
+    store.dispatch(addToCart(e.currentTarget.dataset.cart));
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      duration: 1500
+    });
   },
   /**
    * 生命周期函数--监听页面加载

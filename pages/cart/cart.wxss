@@ -1,7 +1,25 @@
 /* pages/cart/cart.wxss */
+@import './icon.wxss'
 
 page {
-  background-color: #f7f4f4
+  background-color: #f7f4f4;
+  height: 100%;
+}
+
+.main {
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.no-goods {
+  height: 500rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goToHome {
+  color: #ff0000;
 }
 
 .header {
@@ -24,7 +42,7 @@ page {
   position: relative;
 }
 
-.goods-cart > checkbox {
+.goods-cart > checkbox-group{
   position: absolute;
   top: 42px;
   left: 20px;
@@ -83,6 +101,12 @@ page {
   border-right: 1px solid #dedede;
 }
 
+.icon {
+  position: absolute;
+  right: 12px;
+  bottom: -2px;
+}
+
 .footer {
   width: 100%;
   position: fixed;
@@ -93,6 +117,7 @@ page {
   text-align: center;
   height: 50px;
   background-color: #ffffff;
+  border-top: 1px solid #dedede;
 }
 
 .checkAll {

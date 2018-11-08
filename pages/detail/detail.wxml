@@ -24,7 +24,7 @@
     </view>
     <view 
       class="addToCart"
-      catchtap="addToCart"
+      catchtap="addCart"
       data-cart="{{listData}}"
     >加入购物车</view>
     <view class="goumai">立即购买</view>

@@ -1,5 +1,5 @@
 const initState = {
-  data: wx.getStorageSync("ht-cart") || []
+  data: wx.getStorageSync("ht-cart") || [],
 }
 
 export default (state = initState, action) => {
@@ -21,7 +21,8 @@ export default (state = initState, action) => {
       }else{
         newData = data.concat({
           ...cartItem,
-          count: 1
+          count: 1,
+          isChecked:true
         })
       }
       //将其存入Storage中
@@ -38,7 +39,7 @@ export default (state = initState, action) => {
         return item
       })
 
-      //将修改后的数据存入stirage
+      //将修改后的数据存入storage
       wx.setStorageSync('ht-cart', addData);
 
       return Object.assign({}, state, {
@@ -46,18 +47,59 @@ export default (state = initState, action) => {
       })
 
     case "REDUCE":
-      const reData = state.data.map(item => {
+      const reData = state.data.reduce((result,item) => {
         if (item.id === action.id) {
-          item.count -= 1;
+            item.count -= 1;
         }
-        return item
-      })
+        if(item.count > 0){
+          result.push(item)
+        }
+        return result
+      },[])
 
-      //将修改后的数据存入stirage
+      //将修改后的数据存入storage
       wx.setStorageSync('ht-cart', reData);
 
       return Object.assign({}, state, {
         data: reData
+      })
+
+    case "CHANGECHECKED":
+      const chData = state.data.map(item => {
+        if (item.id === action.id) {
+          item.isChecked = !item.isChecked
+        }
+        return item
+      })
+
+      //将修改后的数据存入storage
+      wx.setStorageSync('ht-cart', chData);
+
+      return Object.assign({}, state, {
+        data: chData
+      })
+
+    case "CHANGEALLCHECKED":
+      const chAllData = state.data.map(item => {
+        item.isChecked = action.bool;
+        return item
+      })
+
+      //将修改后的数据存入storage
+      wx.setStorageSync('ht-cart', chAllData);
+
+      return Object.assign({}, state, {
+        data: chAllData
+      })
+
+    case "DELETEGOODS":
+      const deData = state.data.filter(item => item.id !== action.id)
+
+      //将修改后的数据存入storage
+      wx.setStorageSync('ht-cart', deData);
+
+      return Object.assign({}, state, {
+        data: deData
       })
     default:
       return state

@@ -15,7 +15,7 @@ page {
 }
 
 .good-info {
-  width: 170px;
+  width: 340rpx;
   margin-top: 10px;
   border-radius: 10px;
   background-color: #ffffff;

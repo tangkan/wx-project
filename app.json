@@ -5,7 +5,8 @@
     "pages/cart/cart",
     "pages/mine/mine",
     "pages/detail/detail",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/search/search"
   ],
   "tabBar": {
     "list": [

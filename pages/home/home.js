@@ -1,4 +1,6 @@
 import ajax from "../../utils/request.js"
+import store from "../../store/store.js";
+import { addToCart } from "../../store/actions/cart.js";
 
 Page({
   data: {
@@ -29,6 +31,15 @@ Page({
   inputTyping: function (e) {
     this.setData({
       inputVal: e.detail.value
+    });
+  },
+  //添加到购物车
+  addCart(e) {
+    store.dispatch(addToCart(e.currentTarget.dataset.cart));
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      duration: 1500
     });
   },
   //加载list数据

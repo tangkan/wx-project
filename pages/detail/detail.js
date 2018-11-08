@@ -19,8 +19,13 @@ Page({
         });
       })
   },
-  addToCart(e) {
+  addCart(e) {
     store.dispatch(addToCart(e.currentTarget.dataset.cart));
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      duration: 1500
+    });
   },
   getDataFromStore() {
     const allCount = store.getState().cart.data.reduce((result,item) => {
@@ -33,8 +38,8 @@ Page({
   },
   //跳转到购物车
   goToCart() {
-    wx.navigateTo({
-      url: "/pages/cart/cart"
+    wx.switchTab({
+      url: "/pages/cart/cart",
     })
   }
 })

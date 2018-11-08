@@ -18,3 +18,24 @@ export const reduceCount = (id) => {
     id
   }
 }
+
+export const changeChecked = (id) => {
+  return {
+    type: "CHANGECHECKED",
+    id
+  }
+}
+
+export const changeAllChecked = (bool) => {
+  return {
+    type: "CHANGEALLCHECKED",
+    bool
+  }
+}
+
+export const deleteGoods = (id) => {
+  return {
+    type: "DELETEGOODS",
+    id
+  }
+}
