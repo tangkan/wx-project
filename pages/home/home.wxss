@@ -21,6 +21,11 @@ swiper {
   height: 200px;
 }
 
+.hot {
+  margin-left: 10px;
+  color: #ff0000;
+}
+
 .home-main {
   background-color: #f5f3f3;
   overflow: hidden;

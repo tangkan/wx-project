@@ -4,10 +4,12 @@
     <text>0.00</text>
     <text>充值</text>
   </view>
-  <view class="head-img">
+  <view wx:if="{{!isLogin}}">
+      <button class="login" open-type="getUserInfo" plain bindgetuserinfo="bindGetUserInfo">登录</button>
+    </view>
+  <view class="head-img" wx:else>
     <view>
-    <image src="{{avatarUrl}}"></image>
-      <button open-type="getUserInfo" plain bindgetuserinfo="bindGetUserInfo"><image src="{{avatarUrl}}"></image></button>
+      <image src="{{avatarUrl}}"></image>
     </view>
     <text>{{nickName}}</text>
     <text>普通会员</text>
@@ -16,6 +18,11 @@
     <text>积分</text>
     <text>0.00</text>
   </view>
+</view>
+
+<view class="loaction">
+  <icon class="iconfont icon-location"></icon>
+  当前位置:{{location}}
 </view>
 
 <view class="mine-mian">
