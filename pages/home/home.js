@@ -1,4 +1,6 @@
 import ajax from "../../utils/request.js"
+import store from "../../store/store.js";
+import { addToCart } from "../../store/actions/cart.js";
 
 Page({
   data: {
@@ -26,9 +28,25 @@ Page({
       inputVal: ""
     });
   },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
+  goToSearch(e) {
+    //跳转到搜索页面
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
+  },
+  //跳转到详情页
+  goToDetail(e) {
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}`,
+    })
+  },
+  //添加到购物车
+  addCart(e) {
+    store.dispatch(addToCart(e.currentTarget.dataset.cart));
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      duration: 1500
     });
   },
   //加载list数据

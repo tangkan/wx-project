@@ -1,4 +1,9 @@
-<view class="page">
+<scroll-view 
+  class="page"
+  scroll-y
+  lower-threshold="100"
+  bindscrolltolower="loadMore"
+>
     <view class="page__bd">
         <view class="weui-tab">
             <view class="weui-navbar">
@@ -16,15 +21,62 @@
                       class="good-info"
                       wx:for="{{listData}}"
                       wx:key="{{item.id}}"
+                      catchtap="goToDetail"
+                      data-id="{{item.id}}"
                     >
-                      <view>{{item.title}}</view>
+                      <view class="goods-img"><image class="img" src="{{item.img}}"></image></view>
+                      <view class="goods-title">{{item.title}}</view>
+                      <view class="goods-price">{{item.price}}</view>
+                      <view class="goods-dec" catchtap='addCart' data-cart="{{item}}">加入购物车</view>
                     </view>
                   </view>
                 </view>
-                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">销量内容</view>
-                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">价格内容</view>
-                <view class="weui-tab__content" hidden="{{activeIndex != 3}}">品牌内容</view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <view class="goods-list-content">
+                    <view 
+                      class="good-info"
+                      wx:for="{{listData}}"
+                      wx:key="{{item.id}}"
+                    >
+                      <view class="goods-img"><image class="img" src="{{item.img}}"></image></view>
+                      <view class="goods-title">{{item.title}}</view>
+                      <view class="goods-price">{{item.price}}</view>
+                      <view class="goods-dec" catchtap='addCart' data-cart="{{item}}">加入购物车</view>
+                    </view>
+                  </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                  <view class="goods-list-content">
+                    <view 
+                      class="good-info"
+                      wx:for="{{listData}}"
+                      wx:key="{{item.id}}"
+                    >
+                      <view class="goods-img"><image class="img" src="{{item.img}}"></image></view>
+                      <view class="goods-title">{{item.title}}</view>
+                      <view class="goods-price">{{item.price}}</view>
+                      <view class="goods-dec" catchtap='addCart' data-cart="{{item}}">加入购物车</view>
+                    </view>
+                  </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                  <view class="goods-list-content">
+                    <view 
+                      class="good-info"
+                      wx:for="{{listData}}"
+                      wx:key="{{item.id}}"
+                    >
+                      <view class="goods-img"><image class="img" src="{{item.img}}"></image></view>
+                      <view class="goods-title">{{item.title}}</view>
+                      <view class="goods-price">{{item.price}}</view>
+                      <view class="goods-dec" catchtap='addCart' data-cart="{{item}}">加入购物车</view>
+                    </view>
+                  </view>
+                </view>
             </view>
         </view>
     </view>
-</view>
+    <view class="weui-loadmore weui-loadmore_line" wx:if="{{page === total}}">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多了…</view>
+    </view>
+</scroll-view>

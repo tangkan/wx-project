@@ -1,5 +1,5 @@
 /* pages/mine/mine.wxss */
-@import './icon.wxss'
+@import './icon.wxss';
 
 .mine-header {
   height: 130px;
@@ -42,14 +42,24 @@
   align-items: center;
 }
 
-.head-img > view {
+.head-img  view {
   width: 60px;
   height: 60px;
-  background-color: #dedede;
   border-radius: 50%;
 }
 
-.head-img > view image{
+.head-img view image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.head-img button {
+  border: 0;
+
+}
+
+.head-img  view image{
   width: 100%;
   height: 100%;
 }
@@ -57,6 +67,24 @@
 .head-img > text{
   font-size: 12px;
   color: #ffffff;
+}
+
+.login {
+  color: #ddf313 !important;
+  margin-top: 20px;
+  padding: 0 5px;
+  font-size: 16px;
+  border: 0 !important;
+}
+
+.icon-location {
+  font-size: 20px;
+  margin-top: -2px;
+}
+
+.loaction {
+  text-align: center;
+  color: #886a6a;
 }
 
 .integral {
