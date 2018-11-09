@@ -34,6 +34,13 @@ Page({
       url: `/pages/list/list?id=${e.currentTarget.dataset.id}`,
     })
   },
+  //跳转打牌搜索页面
+  goToSearch(e) {
+    //跳转到搜索页面
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
+  },
   //获取导航栏信息
   onLoad() {
     ajax.get("/api/v1/fenlei")

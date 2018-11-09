@@ -28,10 +28,11 @@ Page({
       inputVal: ""
     });
   },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
+  goToSearch(e) {
+    //跳转到搜索页面
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
   },
   //添加到购物车
   addCart(e) {

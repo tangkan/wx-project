@@ -1,7 +1,7 @@
 import ajax from "../../utils/request.js";
 import store from "../../store/store.js";
 import { addToCart } from "../../store/actions/cart.js";
-
+const app = getApp();
 Page({
 
   /**
@@ -87,7 +87,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(options.id)
     //通过获取到的id去请求数据
     ajax.get(`/api/v1/s_list?id=${options.id}`)
       .then(res => {
@@ -115,14 +114,13 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    app.setBadge()    
   },
 
   /**

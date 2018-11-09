@@ -12,7 +12,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(res)
+        // that.setData({
+        //   nickName: res.userInfo.nickName,
+        //   avatarUrl: res.userInfo.avatarUrl,
+        // })
+      },
+    })
   },
 
   /**

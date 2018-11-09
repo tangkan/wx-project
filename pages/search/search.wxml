@@ -18,4 +18,25 @@
             <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
     </view>
+
+    <view class="main">
+      <view class="hot-content">热门搜索 <text catchtap='changeHot'>换一批</text></view>
+      <view class="hot">
+        <view 
+          wx:for="{{hotList}}"
+          wx:key="{{item.id}}"
+          catchtap='goToList'
+          data-item="{{item}}"
+        >{{item.title}}</view>
+      </view>
+      <view class="his-content">历史搜索 </view>
+      <view class="his">
+        <view 
+          wx:for="{{historyList}}"
+          wx:key="{{item.id}}"
+          catchtap='goToList'
+          data-item="{{item}}"
+        >{{item.title}}</view>
+      </view>
+    </view>
   </view>
