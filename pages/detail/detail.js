@@ -2,6 +2,8 @@ import ajax from "../../utils/request.js";
 import store from "../../store/store.js";
 import { addToCart } from "../../store/actions/cart.js";
 
+const app = getApp();
+
 Page({
   data: {
     listData:{},
@@ -18,6 +20,9 @@ Page({
           listData: res.data.data
         });
       })
+  },
+  onUnload() {
+    app.setBadge();
   },
   addCart(e) {
     store.dispatch(addToCart(e.currentTarget.dataset.cart));

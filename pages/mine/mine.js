@@ -5,22 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    nickName: wx.getStorageSync("userInfo").nickName || '游客',
+    avatarUrl: wx.getStorageSync("userInfo").avatarUrl || ''
   },
-
+  bindGetUserInfo (e){
+    this.setData({
+      nickName: e.detail.userInfo.nickName,
+      avatarUrl: e.detail.userInfo.avatarUrl
+    });
+    const userInfo = {};
+    userInfo.nickName = e.detail.userInfo.nickName;
+    userInfo.avatarUrl = e.detail.userInfo.avatarUrl;
+    //存入storage中
+    wx.setStorageSync("userInfo", userInfo)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getUserInfo({
-      success: function (res) {
-        console.log(res)
-        // that.setData({
-        //   nickName: res.userInfo.nickName,
-        //   avatarUrl: res.userInfo.avatarUrl,
-        // })
-      },
-    })
+
   },
 
   /**

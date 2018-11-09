@@ -42,14 +42,24 @@
   align-items: center;
 }
 
-.head-img > view {
+.head-img  view {
   width: 60px;
   height: 60px;
-  background-color: #dedede;
   border-radius: 50%;
 }
 
-.head-img > view image{
+.head-img view image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.head-img button {
+  border: 0;
+
+}
+
+.head-img  view image{
   width: 100%;
   height: 100%;
 }

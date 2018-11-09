@@ -6,9 +6,10 @@
   </view>
   <view class="head-img">
     <view>
-      <image src=''></image>
+    <image src="{{avatarUrl}}"></image>
+      <button open-type="getUserInfo" plain bindgetuserinfo="bindGetUserInfo"><image src="{{avatarUrl}}"></image></button>
     </view>
-    <text>倘若那天</text>
+    <text>{{nickName}}</text>
     <text>普通会员</text>
   </view>
   <view class="integral">

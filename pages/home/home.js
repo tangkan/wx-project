@@ -34,6 +34,12 @@ Page({
       url: '/pages/search/search',
     })
   },
+  //跳转到详情页
+  goToDetail(e) {
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${e.currentTarget.dataset.id}`,
+    })
+  },
   //添加到购物车
   addCart(e) {
     store.dispatch(addToCart(e.currentTarget.dataset.cart));

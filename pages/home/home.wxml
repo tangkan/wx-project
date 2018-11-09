@@ -40,7 +40,13 @@
       <image style='width:100%;height:180px' src="http://img.ugoshop.com/201811/6e5c664447b341d1aaf9beca4b4b4570.gif"></image>
     </view>
     <view class="main-content">
-      <view class="main-content-goods" wx:for="{{listData}}" wx:key="{{item.id}}">
+      <view
+        class="main-content-goods"
+        wx:for="{{listData}}"
+        wx:key="{{item.id}}"
+        catchtap='goToDetail'
+        data-id="{{itme.id}}"
+      >
         <image class="goods-img" src='{{item.img}}'></image>
         <view class="goods-title">{{item.title}}</view>
         <view class="goods-price">￥{{item.price}}</view>
