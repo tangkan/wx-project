@@ -57,39 +57,39 @@ page {
 }
 
 .goods > image {
-  width: 100px;
-  height: 100px;
+  width: 200rpx;
+  height: 200rpx;
 }
 
 .goods-title {
-  width:200px;
-  height: 30px;
+  width:400rpx;
+  height: 60rpx;
   background-color: #ffffff;
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 10rpx;
+  top: 10rpx;
 }
 
 .goods-price {
-  width:100px;
-  height: 20px;
+  width: 200rpx;
+  height: 40rpx;
   position: absolute;
-  left: 105px;
-  top: 40px;
-  font-size: 16px;
-  line-height: 20px;
+  left: 210rpx;
+  top: 80rpx;
+  font-size: 32rpx;
+  line-height: 40rpx;
   color: #ff0000;
 }
 
 .count {
-  width:100px;
-  height: 30px;
+  width: 200rpx;
+  height: 60rpx;
   position: absolute;
-  left: 105px;
-  bottom: 2px;
+  left: 210rpx;
+  bottom: 4rpx;
   display: flex;
   justify-content: space-around;
-  border-radius: 10px;
+  border-radius: 20rpx;
   border: 1px solid #dedede;
 }
 .count > text {
@@ -103,8 +103,8 @@ page {
 
 .icon {
   position: absolute;
-  right: 12px;
-  bottom: -2px;
+  right: 24rpx;
+  bottom: -4rpx;
 }
 
 .footer {
@@ -115,15 +115,16 @@ page {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  height: 50px;
+  height: 100rpx;
   background-color: #ffffff;
   border-top: 1px solid #dedede;
 }
 
 .checkAll {
   width: 20%;
-  line-height:50px;
-  padding-left: 20px;
+  line-height: 100rpx;
+  padding-left: 40rpx;
+  font-size: 36rpx;
 }
 
 .allPrice {
@@ -132,12 +133,12 @@ page {
 
 .cart-order {
   width: 30%;
-  line-height: 50px;
+  line-height: 100rpx;
   background-color: #ff0000;
   color: #ffffff;
 }
 
 .allPrice > view {
   height: 50%;
-  font-size: 14px;
+  font-size: 28rpx;
 }

@@ -5,10 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLogin: false,
+    isLogin: wx.getStorageSync("userInfo").isLogin || false,
     nickName: wx.getStorageSync("userInfo").nickName || '游客',
     avatarUrl: wx.getStorageSync("userInfo").avatarUrl || '',
-    location:'未定位…'
+    location: wx.getStorageSync("location") || '未定位…'
   },
   bindGetUserInfo (e){
     this.setData({
@@ -32,6 +32,7 @@ Page({
             this.setData({
               location: res.data.result.address_component.city
             });
+            wx.setStorageSync('location', res.data.result.address_component.city)
           }
         })
 
